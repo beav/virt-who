@@ -32,8 +32,7 @@ class SatelliteError(Exception):
 
 class Satellite(object):
     """ Class for interacting with satellite (RHN Classic). """
-    VAR_DIR = "/var/lib/virt-who/"
-    HYPERVISOR_SYSTEMID_FILE = VAR_DIR + "hypervisor-systemid"
+    HYPERVISOR_SYSTEMID_FILE="/var/lib/virt-who/hypervisor-system-id"
     def __init__(self, logger):
         self.logger = logger
         self.server = None
@@ -92,8 +91,6 @@ class Satellite(object):
             self.logger.exception("Unable to refresh HW profile")
             raise SatelliteError("Unable to refresh HW profile: %s" % str(e))
         try:
-            if not os.path.isdir(self.VAR_DIR):
-                os.mkdir(self.VAR_DIR, 0600)
             f = open(self.HYPERVISOR_SYSTEMID_FILE, "w")
             try:
                 pickle.dump(new_system, f)
