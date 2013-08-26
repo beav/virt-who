@@ -32,7 +32,7 @@ class SatelliteError(Exception):
 
 class Satellite(object):
     """ Class for interacting with satellite (RHN Classic). """
-    HYPERVISOR_SYSTEMID_FILE="/var/lib/virt-who/hypervisor-system-id"
+    HYPERVISOR_SYSTEMID_FILE="/var/lib/virt-who/hypervisor-systemid"
     def __init__(self, logger):
         self.logger = logger
         self.server = None
@@ -74,7 +74,7 @@ class Satellite(object):
             options = O()
         # Fill in some defaults
         if not hasattr(options, "profile_name") or options.profile_name is None:
-            options.profile_name = "hypervisor"
+            options.profile_name = "remote hypervisor"
         if not hasattr(options, "os_release_name") or options.os_release_name is None:
             options.os_release_name = "unknown"
         if not hasattr(options, "version") or options.version is None:
