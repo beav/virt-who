@@ -1,5 +1,5 @@
 Name:           virt-who
-Version:        0.9
+Version:        0.10
 Release:        1%{?dist}
 Summary:        Agent for reporting virtual guest IDs to subscription-manager
 
@@ -73,6 +73,10 @@ fi
 
 
 %changelog
+* Sun Aug 25 2013 Chris Duryee <cduryee@redhat.com> 0.10-1
+- spec typo and filename typo (cduryee@redhat.com)
+- put /var/lib in spec file (cduryee@redhat.com)
+
 * Fri Aug 23 2013 Chris Duryee <cduryee@redhat.com> 0.9-1
 - new package built with tito
 
