@@ -1,5 +1,5 @@
 Name:           virt-who
-Version:        0.10
+Version:        0.11
 Release:        1%{?dist}
 Summary:        Agent for reporting virtual guest IDs to subscription-manager
 
@@ -72,6 +72,9 @@ fi
 
 
 %changelog
+* Mon Aug 26 2013 Chris Duryee <cduryee@redhat.com> 0.11-1
+- add try/except to virt_notify (cduryee@redhat.com)
+- remove virt-who-register-satellite (cduryee@redhat.com)
 * Sun Aug 25 2013 Chris Duryee <cduryee@redhat.com> 0.10-1
 - spec typo and filename typo (cduryee@redhat.com)
 - put /var/lib in spec file (cduryee@redhat.com)
