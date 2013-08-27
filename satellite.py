@@ -140,7 +140,12 @@ class Satellite(object):
             plan = self._assemble_plan(mapping[hypervisor_uuid], hypervisor_uuid, type = type)
 
             self.logger.debug("Sending plan: %s" % plan)
-            self.server.registration.virt_notify(hypervisor_systemid["system_id"], plan)
+            try:
+                self.server.registration.virt_notify(hypervisor_systemid["system_id"], plan)
+            except Exception, e:
+                self.logger.exception("Unable to send host/guest assocaition to the satellite:")
+                raise SatelliteError("Unable to send host/guest assocaition to the satellite: % " % str(e))
+
 
         # TODO: figure out what to populate here
         result = {}
