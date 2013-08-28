@@ -1,5 +1,5 @@
 Name:           virt-who
-Version:        0.11
+Version:        0.12
 Release:        1%{?dist}
 Summary:        Agent for reporting virtual guest IDs to subscription-manager
 
@@ -72,6 +72,9 @@ fi
 
 
 %changelog
+* Tue Aug 27 2013 Chris Duryee <cduryee@redhat.com> 0.12-1
+- use 'sam' as smType, not 'rhsm' (cduryee@redhat.com)
+
 * Mon Aug 26 2013 Chris Duryee <cduryee@redhat.com> 0.11-1
 - add try/except to virt_notify (cduryee@redhat.com)
 - remove virt-who-register-satellite (cduryee@redhat.com)
